@@ -560,14 +560,14 @@ button {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--fuchsia);
+  color: var(--white);
   margin-bottom: var(--space-sm);
 }
 
 .problem-card__text {
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--white);
   margin-bottom: var(--space-sm);
 }
 
@@ -983,9 +983,10 @@ a.problem-card__source:hover {
   border-radius: 2px;
 }
 
-.schedule-item__icon--musik { background: var(--sunshine); }
-.schedule-item__icon--politik { background: var(--sky); }
-.schedule-item__icon--workshop { background: var(--fuchsia); }
+.schedule-item__icon--musik { background: var(--grape); color: var(--white); }
+.schedule-item__icon--programm { background: var(--sunshine); }
+.schedule-item__icon--politik { background: var(--sunshine); }
+.schedule-item__icon--workshop { background: var(--sunshine); }
 .schedule-item__icon--kultur { background: var(--grape); color: var(--white); }
 
 .schedule-item__name {
@@ -1011,17 +1012,22 @@ a.problem-card__source:hover {
 }
 
 .schedule-item__tag--musik {
+  background: var(--grape);
+  color: var(--white);
+}
+
+.schedule-item__tag--programm {
   background: var(--sunshine);
   color: var(--grape);
 }
 
 .schedule-item__tag--politik {
-  background: var(--sky);
+  background: var(--sunshine);
   color: var(--grape);
 }
 
 .schedule-item__tag--workshop {
-  background: var(--fuchsia);
+  background: var(--sunshine);
   color: var(--grape);
 }
 
@@ -1035,6 +1041,57 @@ a.problem-card__source:hover {
 .schedule-item__tag--interaktiv {
   background: var(--sunshine);
   color: var(--grape);
+}
+
+/* ============================================
+   LEGAL PAGES
+   ============================================ */
+.legal-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  margin-top: var(--space-md);
+  margin-bottom: 0.5rem;
+}
+
+.legal-content h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-top: var(--space-md);
+  margin-bottom: 0.5rem;
+}
+
+.legal-content p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--grey-text);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.legal-content li {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--grey-text);
+  margin-bottom: 0.25rem;
+}
+
+.legal-content a {
+  color: var(--grape);
+  text-decoration: underline;
 }
 
 /* ============================================

@@ -13,7 +13,7 @@
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo"><img src="assets/logos/logo-dark-wide.png" alt="Fest der Demokratie"></a>
+      <a href="index.html" class="nav__logo"><img src="assets/logos/logo-white-wide.png" alt="Fest der Demokratie"></a>
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html" class="nav__link">Home</a></li>
         <li><a href="programm.html" class="nav__link nav__link--active">Programm</a></li>
@@ -29,9 +29,9 @@
   <!-- HERO -->
   <section class="programm-hero">
     <div class="container">
-      <p class="section__overline fade-in">Sa, 4. Juli 2026 · ab 16 Uhr</p>
+      <p class="section__overline fade-in">Sa, 4. Juli 2026 · Bürgerpark Pfaffenhofen · Einlass ab 15 Uhr</p>
       <h1 class="section__title fade-in" style="font-size:clamp(3rem, 7vw, 6rem);">Programm</h1>
-      <p class="section__subtitle fade-in">Musik und politische Bildung — gleichberechtigt auf der Bühne im Bürgerpark. Von der Eröffnung ab 16 Uhr bis zum Headliner-Konzert am Abend.</p>
+      <p class="section__subtitle fade-in">Musik und politische Bildung — gleichberechtigt auf der Bühne im Bürgerpark. Von 15 bis 23:15 Uhr erwartet dich ein abwechslungsreiches Programm mit Live-Konzerten, Workshops und Podiumsdiskussion.</p>
     </div>
   </section>
 
@@ -41,120 +41,128 @@
       <div class="programm-filters fade-in" id="filters">
         <button class="filter-btn filter-btn--active" data-filter="alle">Alle</button>
         <button class="filter-btn" data-filter="musik">🎵 Musik</button>
-        <button class="filter-btn" data-filter="politik">🎤 Panels & Talks</button>
-        <button class="filter-btn" data-filter="workshop">🛠 Workshops</button>
-        <button class="filter-btn" data-filter="interaktiv">🧩 Interaktiv</button>
+        <button class="filter-btn" data-filter="programm">🎤 Programm & Mitmachen</button>
       </div>
 
       <!-- SINGLE DAY SCHEDULE -->
       <div class="schedule fade-in" id="schedule">
 
-        <div class="schedule-item" data-day="1" data-category="interaktiv">
-          <div class="schedule-item__time">16:00</div>
-          <div class="schedule-item__icon schedule-item__icon--interaktiv">🧩</div>
+        <div class="schedule-item" data-day="1" data-category="programm">
+          <div class="schedule-item__time">15:00</div>
+          <div class="schedule-item__icon schedule-item__icon--programm">🧩</div>
           <div>
-            <div class="schedule-item__name">Infostände & Demokratie-Check</div>
-            <div class="schedule-item__detail">Festivalgelände · Ganztägig: Lokale Jugendorganisationen, Vereine und die interaktive Station „Was würde sich in einer Diktatur ändern?"</div>
+            <div class="schedule-item__name">Interaktive Stände & Stationen</div>
+            <div class="schedule-item__detail">Festivalgelände · Ganztägig: Lokale Jugendorganisationen und Vereine präsentieren interaktive Stationen — darunter z. B. der Demokratie-Check „Was würde sich in einer Diktatur ändern?"</div>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--interaktiv">Interaktiv</span>
+          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
+        </div>
+
+        <div class="schedule-item" data-day="1" data-category="musik">
+          <div class="schedule-item__time">15:00</div>
+          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
+          <div>
+            <div class="schedule-item__name">DJ-Set: Milan Milano</div>
+            <div class="schedule-item__detail">Bühne · Musikalische Einstimmung auf das Fest der Demokratie — bis 16:00 Uhr</div>
+          </div>
+          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
+        </div>
+
+        <div class="schedule-item" data-day="1" data-category="programm">
+          <div class="schedule-item__time">16:00</div>
+          <div class="schedule-item__icon schedule-item__icon--programm">🎤</div>
+          <div>
+            <div class="schedule-item__name">Eröffnung & Begrüßung</div>
+            <div class="schedule-item__detail">Bühne · Offizielle Eröffnung mit Grußwort der Petra-Kelly-Stiftung</div>
+          </div>
+          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
+        </div>
+
+        <div class="schedule-item" data-day="1" data-category="programm">
+          <div class="schedule-item__time">16:10</div>
+          <div class="schedule-item__icon schedule-item__icon--programm">🛠</div>
+          <div>
+            <div class="schedule-item__name">Workshops: Respekt-Café & Lego Serious Play</div>
+            <div class="schedule-item__detail">Workshop-Zelte · In Kooperation mit der vhs Pfaffenhofen — bis 17:05 Uhr</div>
+          </div>
+          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
         </div>
 
         <div class="schedule-item" data-day="1" data-category="musik">
           <div class="schedule-item__time">16:15</div>
           <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
           <div>
-            <div class="schedule-item__name">DJ Warm-Up</div>
-            <div class="schedule-item__detail">Bühne · Musikalische Einstimmung auf das Fest der Demokratie</div>
+            <div class="schedule-item__name">Live-Konzert: Fliegende Haie</div>
+            <div class="schedule-item__detail">Bühne · Live-Musik — bis 16:55 Uhr</div>
           </div>
           <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
         </div>
 
-        <div class="schedule-item" data-day="1" data-category="politik">
-          <div class="schedule-item__time">16:55</div>
-          <div class="schedule-item__icon schedule-item__icon--politik">🎤</div>
-          <div>
-            <div class="schedule-item__name">Eröffnung & Begrüßung</div>
-            <div class="schedule-item__detail">Bühne · Offizielle Eröffnung mit Grußwort der Petra-Kelly-Stiftung</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--politik">Panel</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="workshop">
-          <div class="schedule-item__time">17:10</div>
-          <div class="schedule-item__icon schedule-item__icon--workshop">🛠</div>
-          <div>
-            <div class="schedule-item__name">Workshop-Session: Respekt-Café & Lego Serious Play</div>
-            <div class="schedule-item__detail">Workshop-Zelt · In Kooperation mit der vhs Pfaffenhofen — bis 18:05 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--workshop">Workshop</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
+        <div class="schedule-item" data-day="1" data-category="programm">
           <div class="schedule-item__time">17:15</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Act 1 — Lokale Band</div>
-            <div class="schedule-item__detail">Bühne · Live-Musik aus der Region Pfaffenhofen — bis 17:55 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="politik">
-          <div class="schedule-item__time">18:05</div>
-          <div class="schedule-item__icon schedule-item__icon--politik">🎤</div>
+          <div class="schedule-item__icon schedule-item__icon--programm">🎤</div>
           <div>
             <div class="schedule-item__name">Podiumsdiskussion</div>
-            <div class="schedule-item__detail">Bühne · Demokratie unter Druck — Polarisierung, Politikverdrossenheit und was wir dagegen tun können — bis 18:55 Uhr</div>
+            <div class="schedule-item__detail">Bühne · Junge Stimmen zur Zukunft der Demokratie — mit Vertreter:innen von Jugendorganisationen und jungen Politiker:innen — bis 17:45 Uhr</div>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--politik">Panel</span>
+          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
         </div>
 
         <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">19:10</div>
+          <div class="schedule-item__time">18:05</div>
           <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
           <div>
-            <div class="schedule-item__name">Act 2 — Lokale Band</div>
-            <div class="schedule-item__detail">Bühne · Live-Musik aus der Region — bis 19:55 Uhr</div>
+            <div class="schedule-item__name">Live-Konzert: Juli Gilde</div>
+            <div class="schedule-item__detail">Bühne · Live-Musik — bis 18:50 Uhr</div>
           </div>
           <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
         </div>
 
         <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">20:35</div>
+          <div class="schedule-item__time">19:15</div>
           <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
           <div>
-            <div class="schedule-item__name">Act 3 — Bekannterer Act</div>
-            <div class="schedule-item__detail">Bühne · Special Guest des Abends — bis 21:25 Uhr</div>
+            <div class="schedule-item__name">Live-Konzert: bucci</div>
+            <div class="schedule-item__detail">Bühne · Live-Musik — bis 20:05 Uhr</div>
           </div>
           <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
         </div>
 
         <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">21:55</div>
+          <div class="schedule-item__time">20:50</div>
           <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
           <div>
-            <div class="schedule-item__name">Headliner / Hauptact</div>
-            <div class="schedule-item__detail">Bühne · Der Hauptact des Abends — wird noch bekanntgegeben! Bis 22:55 Uhr</div>
+            <div class="schedule-item__name">Live-Konzert: PLUME</div>
+            <div class="schedule-item__detail">Bühne · Live-Musik — bis 21:45 Uhr</div>
           </div>
           <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
         </div>
 
-        <div class="schedule-item" data-day="1" data-category="politik">
-          <div class="schedule-item__time">22:55</div>
-          <div class="schedule-item__icon schedule-item__icon--politik">🎤</div>
+        <div class="schedule-item" data-day="1" data-category="musik">
+          <div class="schedule-item__time">22:05</div>
+          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
+          <div>
+            <div class="schedule-item__name">Live-Konzert: George JR</div>
+            <div class="schedule-item__detail">Bühne · Headliner des Abends — bis 23:05 Uhr</div>
+          </div>
+          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
+        </div>
+
+        <div class="schedule-item" data-day="1" data-category="programm">
+          <div class="schedule-item__time">23:05</div>
+          <div class="schedule-item__icon schedule-item__icon--programm">🎤</div>
           <div>
             <div class="schedule-item__name">Abmoderation</div>
-            <div class="schedule-item__detail">Bühne · Gemeinsamer Rückblick auf den Tag und Dank an alle Beteiligten</div>
+            <div class="schedule-item__detail">Bühne · Rückblick auf den Tag und Dank an alle Beteiligten</div>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--politik">Panel</span>
+          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
         </div>
 
         <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">23:05</div>
+          <div class="schedule-item__time">23:15</div>
           <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
           <div>
             <div class="schedule-item__name">Ausklang</div>
-            <div class="schedule-item__detail">Bühne · Gemeinsamer musikalischer Abschluss des Fests der Demokratie — bis 23:35 Uhr</div>
+            <div class="schedule-item__detail">Bühne · Entspannter musikalischer Abschluss des Fests der Demokratie — bis 23:45 Uhr</div>
           </div>
           <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
         </div>
@@ -197,7 +205,7 @@
         <div class="cta-banner__shape" style="background: var(--grape);"></div>
         <div class="cta-banner__content">
           <h2 class="cta-banner__title" style="color: var(--black);">Ganztägig: Infostände, Workshops & Demokratie-Check</h2>
-          <p class="cta-banner__text" style="color: rgba(0,0,0,0.65);">Von 16 bis 23 Uhr präsentieren lokale Jugendorganisationen, politische Vereine und Initiativen wie das Jugendparlament, der Kreisjugendring, Queer e.V. und „Pfaffenhofen ist bunt" ihre Arbeit. Die vhs Pfaffenhofen bietet das Respekt-Café und Lego Serious Play an. Komm vorbei und finde heraus, wo du dich einbringen kannst!</p>
+          <p class="cta-banner__text" style="color: rgba(0,0,0,0.65);">Von 15 bis 23 Uhr präsentieren lokale Jugendorganisationen, politische Vereine und Initiativen wie das Jugendparlament, der Kreisjugendring, Queer e.V. und „Pfaffenhofen ist bunt" ihre Arbeit. Die vhs Pfaffenhofen bietet das Respekt-Café und Lego Serious Play an. Komm vorbei und finde heraus, wo du dich einbringen kannst!</p>
         </div>
       </div>
     </div>
@@ -223,8 +231,8 @@
           <a href="mailto:fest.der.demokratie.paf@gmail.com" class="footer__link">fest.der.demokratie.paf@gmail.com</a>
           <a href="https://instagram.com/fest.der.demokratie" class="footer__link">@fest.der.demokratie</a>
           <a href="#" class="footer__link">Presse</a>
-          <a href="#" class="footer__link">Impressum</a>
-          <a href="#" class="footer__link">Datenschutz</a>
+          <a href="impressum.html" class="footer__link">Impressum</a>
+          <a href="datenschutz.html" class="footer__link">Datenschutz</a>
         </div>
         <div>
           <h4 class="footer__heading">Partner &amp; Förderer</h4>
