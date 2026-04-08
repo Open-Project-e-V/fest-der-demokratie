@@ -663,66 +663,124 @@ a.problem-card__source:hover {
 /* ============================================
    LINEUP / PROGRAMM PREVIEW
    ============================================ */
-.lineup-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+/* --- Carousel --- */
+.carousel {
+  position: relative;
+  width: 100%;
 }
 
-.lineup-card {
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(86, 2, 80, 0.15);
-  padding: var(--space-lg);
+.carousel__viewport {
+  overflow: hidden;
+}
+
+.carousel__track {
   display: flex;
   gap: var(--space-md);
-  align-items: flex-start;
-  transition: all var(--duration-base) var(--ease-out);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-.lineup-card:hover {
-  border-color: var(--ruby);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-}
-
-.lineup-card__icon {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
+.carousel__card {
+  flex: 0 0 calc(50% - var(--space-md) / 2);
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  border-radius: 2px;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+  cursor: default;
 }
 
-.lineup-card__icon--musik {
-  background: var(--sunshine);
+.carousel__card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(86, 2, 80, 0.15);
 }
 
-.lineup-card__icon--politik {
-  background: var(--sky);
+.carousel__card-text {
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
 }
 
-.lineup-card__tag {
+.carousel__card-tag {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--grey-text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
-.lineup-card__name {
+.carousel__card-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  color: var(--grape);
 }
 
-.lineup-card__desc {
-  font-size: 0.875rem;
+.carousel__card-desc {
+  font-size: 0.9rem;
   color: var(--grey-text);
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.carousel__card-visual {
+  margin: 0 var(--space-md) var(--space-md);
+  border-radius: 14px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.carousel__card:hover .carousel__card-img {
+  transform: scale(1.05);
+}
+
+.carousel__card-credit {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--grey-text);
+  text-align: right;
+  padding: 0.25rem var(--space-md) var(--space-sm);
+}
+
+/* Carousel navigation dots */
+.carousel__nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-lg);
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(86, 2, 80, 0.2);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  padding: 0;
+}
+
+.carousel__dot--active {
+  background: var(--grape);
+  transform: scale(1.2);
+}
+
+.carousel__dot:hover {
+  background: var(--grape);
 }
 
 /* ============================================
@@ -1763,8 +1821,12 @@ a.problem-card__source:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .lineup-grid {
-    grid-template-columns: 1fr;
+  .carousel__card {
+    flex: 0 0 85%;
+  }
+
+  .carousel__card-title {
+    font-size: 1.3rem;
   }
 
   .about-intro {
