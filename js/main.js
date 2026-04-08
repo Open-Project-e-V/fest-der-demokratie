@@ -44,43 +44,96 @@
     });
   }
 
-  // --- INTERSECTION OBSERVER (Fade-in) ---
-  const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left');
-  if (fadeElements.length > 0) {
+  // --- INTERSECTION OBSERVER (Scroll Animations) ---
+  const animClasses = {
+    'fade-in': 'fade-in--visible',
+    'slide-in-left': 'slide-in-left--visible',
+    'slide-in-right': 'slide-in-right--visible',
+    'scale-in': 'scale-in--visible'
+  };
+
+  const animElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+  if (animElements.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add(
-            entry.target.classList.contains('slide-in-left')
-              ? 'slide-in-left--visible'
-              : 'fade-in--visible'
-          );
+          for (const [cls, visibleCls] of Object.entries(animClasses)) {
+            if (entry.target.classList.contains(cls)) {
+              entry.target.classList.add(visibleCls);
+              break;
+            }
+          }
+          // If stagger parent, trigger children
+          if (entry.target.classList.contains('stagger')) {
+            entry.target.querySelectorAll('.fade-in, .scale-in').forEach(child => {
+              for (const [cls, visibleCls] of Object.entries(animClasses)) {
+                if (child.classList.contains(cls)) {
+                  child.classList.add(visibleCls);
+                }
+              }
+            });
+          }
           observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.08,
+      rootMargin: '0px 0px -60px 0px'
     });
 
-    fadeElements.forEach(el => observer.observe(el));
+    animElements.forEach(el => observer.observe(el));
   }
 
-  // --- COUNTER ANIMATION ---
+  // --- PARALLAX on Hero background ---
+  const heroBg = document.querySelector('.hero__bg-img');
+  if (heroBg) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const heroHeight = document.querySelector('.hero').offsetHeight;
+          if (scrollY < heroHeight) {
+            heroBg.style.transform = `scale(1.1) translateY(${scrollY * 0.3}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // --- Nav hide on scroll down, show on scroll up ---
+  let lastNavScrollY = 0;
+  let navHidden = false;
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 300 && scrollY > lastNavScrollY && !navHidden) {
+      nav.style.transform = 'translateY(-100%)';
+      navHidden = true;
+    } else if (scrollY < lastNavScrollY && navHidden) {
+      nav.style.transform = 'translateY(0)';
+      navHidden = false;
+    }
+    lastNavScrollY = scrollY;
+  }, { passive: true });
+
+  // --- COUNTER ANIMATION (delayed until fade-in parent is visible) ---
   const counters = document.querySelectorAll('[data-count]');
   if (counters.length > 0) {
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count, 10);
-          animateCounter(el, target);
-          counterObserver.unobserve(el);
+    const statsParent = document.querySelector('.stats');
+    if (statsParent) {
+      const counterObserver = new MutationObserver(() => {
+        if (statsParent.classList.contains('fade-in--visible')) {
+          counters.forEach(el => {
+            const target = parseInt(el.dataset.count, 10);
+            animateCounter(el, target);
+          });
+          counterObserver.disconnect();
         }
       });
-    }, { threshold: 0.5 });
-
-    counters.forEach(el => counterObserver.observe(el));
+      counterObserver.observe(statsParent, { attributes: true, attributeFilter: ['class'] });
+    }
   }
 
   function animateCounter(el, target) {
