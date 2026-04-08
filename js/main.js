@@ -241,6 +241,119 @@
     });
   }
 
+  // --- LINEUP CAROUSEL (infinite loop) ---
+  const carousel = document.getElementById('lineupCarousel');
+  if (carousel) {
+    const track = carousel.querySelector('.carousel__track');
+    const originalCards = Array.from(carousel.querySelectorAll('.carousel__card'));
+    const dots = carousel.querySelectorAll('.carousel__dot');
+    const numOriginal = originalCards.length; // 4
+    let currentSlide = 0;
+    let autoplayInterval = null;
+    let isHovering = false;
+    let isTransitioning = false;
+
+    // Clone first 2 cards and append for seamless loop
+    for (let i = 0; i < 2; i++) {
+      const clone = originalCards[i].cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    }
+
+    function getCardWidth() {
+      const cards = track.querySelectorAll('.carousel__card');
+      if (!cards[0]) return 0;
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return cards[0].offsetWidth + gap;
+    }
+
+    function updateDots(index) {
+      const dotIndex = index % numOriginal;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('carousel__dot--active', i === dotIndex);
+      });
+    }
+
+    function goToSlide(index, animate) {
+      if (animate !== false) {
+        track.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+      } else {
+        track.style.transition = 'none';
+      }
+      currentSlide = index;
+      const offset = getCardWidth() * index;
+      track.style.transform = `translateX(-${offset}px)`;
+      updateDots(index);
+    }
+
+    // After transition to clone area, snap back instantly
+    track.addEventListener('transitionend', () => {
+      if (currentSlide >= numOriginal) {
+        goToSlide(currentSlide - numOriginal, false);
+      }
+      isTransitioning = false;
+    });
+
+    function nextSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      goToSlide(currentSlide + 1, true);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayInterval = setInterval(() => {
+        if (!isHovering) nextSlide();
+      }, 2800);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        autoplayInterval = null;
+      }
+    }
+
+    // Dot clicks
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        if (isTransitioning) return;
+        goToSlide(parseInt(dot.dataset.index, 10), true);
+        startAutoplay();
+      });
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => { isHovering = true; });
+    carousel.addEventListener('mouseleave', () => { isHovering = false; });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50 && !isTransitioning) {
+        if (diff > 0) {
+          nextSlide();
+        } else if (currentSlide > 0) {
+          isTransitioning = true;
+          goToSlide(currentSlide - 1, true);
+        }
+        startAutoplay();
+      }
+    }, { passive: true });
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      goToSlide(currentSlide, false);
+    });
+
+    // Start
+    startAutoplay();
+  }
+
   // --- MARQUEE PAUSE ON HOVER ---
   const marquee = document.querySelector('.marquee__inner');
   if (marquee) {

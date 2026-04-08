@@ -133,47 +133,81 @@
   </section>
 
   <!-- LINEUP PREVIEW -->
-  <section class="section">
+  <section class="section lineup-section">
     <div class="container">
       <div class="section__header fade-in">
         <p class="section__overline">Line-Up Highlights</p>
         <h2 class="section__title">Musik trifft<br>Meinung</h2>
         <p class="section__subtitle">Ein Auszug aus unserem Programm — die volle Übersicht findest du auf der Programmseite.</p>
       </div>
-      <div class="lineup-grid fade-in">
-        <div class="lineup-card">
-          <div class="lineup-card__icon" style="background: var(--fuchsia);">🎵</div>
-          <div>
-            <div class="lineup-card__tag">Musik · Hauptbühne</div>
-            <div class="lineup-card__name">George JR, PLUME, bucci, Juli Gilde & mehr</div>
-            <div class="lineup-card__desc">Live-Konzerte den ganzen Tag — von regionalen Acts bis zum Headliner George JR am Abend.</div>
+
+      <div class="carousel fade-in" id="lineupCarousel">
+        <div class="carousel__viewport">
+        <div class="carousel__track">
+          <!-- Card 1: Live-Musik -->
+          <div class="carousel__card" style="--card-accent: var(--fuchsia);">
+            <div class="carousel__card-text">
+              <span class="carousel__card-tag">Musik · Hauptbühne</span>
+              <h3 class="carousel__card-title">Live-Musik</h3>
+              <p class="carousel__card-desc">George JR, PLUME, bucci, Juli Gilde & mehr — Live-Konzerte den ganzen Tag, von regionalen Acts bis zum Headliner am Abend.</p>
+            </div>
+            <div class="carousel__card-visual">
+              <img src="assets/lineup/george-jr.jpg" alt="George JR live" class="carousel__card-img">
+            </div>
+            <span class="carousel__card-credit">Foto: KYD</span>
+          </div>
+
+          <!-- Card 2: Podiumsdiskussion -->
+          <div class="carousel__card" style="--card-accent: var(--sky);">
+            <div class="carousel__card-text">
+              <span class="carousel__card-tag">Panel · Bühne</span>
+              <h3 class="carousel__card-title">Podiums&shy;diskussion</h3>
+              <p class="carousel__card-desc">Junge Stimmen zur Zukunft der Demokratie — live auf der Bühne diskutiert mit spannenden Gästen.</p>
+            </div>
+            <div class="carousel__card-visual">
+              <img src="assets/lineup/podiumsdiskussion.jpg" alt="Podiumsdiskussion" class="carousel__card-img">
+            </div>
+            <span class="carousel__card-credit">Foto: Miguel González</span>
+          </div>
+
+          <!-- Card 3: Infostände -->
+          <div class="carousel__card" style="--card-accent: var(--sunshine);">
+            <div class="carousel__card-text">
+              <span class="carousel__card-tag">Interaktiv · Festivalgelände</span>
+              <h3 class="carousel__card-title">Interaktive Infostände</h3>
+              <p class="carousel__card-desc">Lokale Vereine und Initiativen stellen sich vor — entdecke, wo du dich einbringen kannst.</p>
+            </div>
+            <div class="carousel__card-visual">
+              <img src="assets/lineup/infostande.jpg" alt="Infostände im Bürgerpark" class="carousel__card-img">
+            </div>
+            <span class="carousel__card-credit">Foto: Stadt Pfaffenhofen</span>
+          </div>
+
+          <!-- Card 4: Workshops -->
+          <div class="carousel__card" style="--card-accent: var(--ruby);">
+            <div class="carousel__card-text">
+              <span class="carousel__card-tag">Workshop · vhs Pfaffenhofen</span>
+              <h3 class="carousel__card-title">Lego Serious Play & Respekt-Café</h3>
+              <p class="carousel__card-desc">Spielerische Zukunftsgestaltung und kontroverser Dialog — innovative vhs-Workshops zum Mitmachen.</p>
+            </div>
+            <div class="carousel__card-visual">
+              <img src="assets/lineup/workshop.jpg" alt="Workshop" class="carousel__card-img">
+            </div>
+            <span class="carousel__card-credit">Foto: Yan Krukau</span>
           </div>
         </div>
-        <div class="lineup-card">
-          <div class="lineup-card__icon" style="background: var(--fuchsia);">🎤</div>
-          <div>
-            <div class="lineup-card__tag">Panel · Bühne</div>
-            <div class="lineup-card__name">Podiumsdiskussion</div>
-            <div class="lineup-card__desc">Junge Stimmen zur Zukunft der Demokratie — live auf der Bühne diskutiert.</div>
-          </div>
-        </div>
-        <div class="lineup-card">
-          <div class="lineup-card__icon" style="background: var(--fuchsia);">🛡</div>
-          <div>
-            <div class="lineup-card__tag">Interaktiv · Festivalgelände</div>
-            <div class="lineup-card__name">Interaktive Infostände</div>
-            <div class="lineup-card__desc">Lokale Vereine und Initiativen stellen sich vor — entdecke, wo du dich einbringen kannst.</div>
-          </div>
-        </div>
-        <div class="lineup-card">
-          <div class="lineup-card__icon" style="background: var(--fuchsia);">🛠</div>
-          <div>
-            <div class="lineup-card__tag">Workshop · vhs Pfaffenhofen</div>
-            <div class="lineup-card__name">Lego Serious Play & Respekt-Café</div>
-            <div class="lineup-card__desc">Spielerische Zukunftsgestaltung und kontroverser Dialog — innovative vhs-Workshops zum Mitmachen.</div>
-          </div>
+
+        </div><!-- /.carousel__viewport -->
+
+        <!-- Navigation dots -->
+        <div class="carousel__nav">
+          <button class="carousel__dot carousel__dot--active" data-index="0" aria-label="Slide 1"></button>
+          <button class="carousel__dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="carousel__dot" data-index="2" aria-label="Slide 3"></button>
+          <button class="carousel__dot" data-index="3" aria-label="Slide 4"></button>
         </div>
       </div>
+
       <div style="text-align:center; margin-top:var(--space-lg);" class="fade-in">
         <a href="programm.html" class="btn btn--primary">Zum vollständigen Programm
           <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
