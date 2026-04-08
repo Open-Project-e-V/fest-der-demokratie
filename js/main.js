@@ -8,7 +8,8 @@
   // --- NAVIGATION ---
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+  const navLeft = nav ? nav.querySelector('.nav__left') : null;
+  const navRight = nav ? nav.querySelector('.nav__right') : null;
 
   // Scroll effect
   let lastScrollY = 0;
@@ -26,15 +27,18 @@
   if (navToggle) {
     navToggle.addEventListener('click', () => {
       navToggle.classList.toggle('nav__toggle--open');
-      navLinks.classList.toggle('nav__links--open');
-      document.body.style.overflow = navLinks.classList.contains('nav__links--open') ? 'hidden' : '';
+      if (navLeft) navLeft.classList.toggle('nav__mobile--open');
+      if (navRight) navRight.classList.toggle('nav__mobile--open');
+      const isOpen = navLeft && navLeft.classList.contains('nav__mobile--open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close on link click
-    navLinks.querySelectorAll('.nav__link').forEach(link => {
+    nav.querySelectorAll('.nav__link, .nav__icon').forEach(link => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('nav__toggle--open');
-        navLinks.classList.remove('nav__links--open');
+        if (navLeft) navLeft.classList.remove('nav__mobile--open');
+        if (navRight) navRight.classList.remove('nav__mobile--open');
         document.body.style.overflow = '';
       });
     });

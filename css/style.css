@@ -153,6 +153,29 @@ button {
   padding: 0 var(--space-md);
 }
 
+.nav__left,
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex: 1;
+}
+
+.nav__right {
+  justify-content: flex-end;
+}
+
+.nav__icon {
+  display: flex;
+  align-items: center;
+  color: var(--grape);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav__icon:hover {
+  color: var(--ruby);
+}
+
 .nav__logo {
   display: flex;
   align-items: center;
@@ -164,10 +187,6 @@ button {
   width: auto;
 }
 
-.hero__title-logo {
-  width: min(100%, 600px);
-  height: auto;
-}
 
 .nav__logo span {
   color: var(--ruby);
@@ -260,110 +279,113 @@ button {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-top: var(--nav-height);
+  flex-direction: column;
+  align-items: stretch;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #fdc0ff;
 }
 
-.hero__bg-shape {
-  display: none;
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-.hero__content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-md);
+.hero__bg-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: auto;
 }
 
-.hero__overline {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ruby);
-  margin-bottom: var(--space-sm);
+.hero__center {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-}
-
-.hero__overline::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 2px;
-  background: var(--ruby);
+  justify-content: center;
+  padding-top: var(--nav-height);
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 10vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: var(--grape);
-  margin-bottom: var(--space-md);
-}
-
-.hero__title-line {
-  display: block;
-}
-
-.hero__title-line--accent {
-  color: var(--ruby);
-  -webkit-text-stroke: 0;
-}
-
-.hero__title-line--outline {
-  -webkit-text-stroke: 2px var(--grape);
-  color: transparent;
-}
-
-.hero__subtitle {
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
-  font-weight: 300;
-  line-height: 1.5;
-  max-width: 560px;
-  color: var(--grey-text);
-  margin-bottom: var(--space-lg);
-}
-
-.hero__meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+  justify-content: center;
+  width: 100%;
 }
 
-.hero__meta-item {
+.hero__title-logo {
+  width: min(85%, 600px);
+  height: auto;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
+  display: block;
+  margin: 0 auto;
+}
+
+/* "by Open Project e.V." badge */
+.hero__badge {
+  position: absolute;
+  bottom: 100px;
+  right: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+
+.hero__badge-by {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--white);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.hero__badge-logo {
+  height: 36px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Info bar at bottom */
+.hero__infobar {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(20, 0, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--white);
+  z-index: 2;
+}
+
+.hero__infobar-left {
+  display: flex;
+  align-items: center;
+}
+
+.hero__infobar-center {
+  display: flex;
+  gap: var(--space-lg);
   font-size: 0.9375rem;
   font-weight: 500;
 }
 
-.hero__meta-icon {
-  width: 20px;
-  height: 20px;
+.hero__infobar-right {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ruby);
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
   gap: var(--space-sm);
 }
 
@@ -404,6 +426,19 @@ button {
 .btn--secondary:hover {
   background: var(--grape);
   color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn--rosa {
+  background: transparent;
+  color: #fdc0ff;
+  border: 2px solid #fdc0ff;
+  font-weight: 700;
+}
+
+.btn--rosa:hover {
+  background: #fdc0ff;
+  color: var(--grape);
   transform: translateY(-2px);
 }
 
@@ -1448,17 +1483,6 @@ a.problem-card__source:hover {
   padding: var(--space-sm);
 }
 
-/* --- HERO META LINK --- */
-.hero__meta-item--link {
-  text-decoration: none;
-  color: inherit;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-.hero__meta-item--link:hover {
-  color: var(--ruby);
-}
-
 /* ============================================
    SPENDEN PAGE
    ============================================ */
@@ -1807,7 +1831,8 @@ a.problem-card__source:hover {
     --space-xl: 3rem;
   }
 
-  .nav__links {
+  .nav__left,
+  .nav__right {
     display: none;
     position: fixed;
     top: 0;
@@ -1822,7 +1847,11 @@ a.problem-card__source:hover {
     z-index: 999;
   }
 
-  .nav__links--open {
+  .nav__left.nav__mobile--open {
+    display: flex;
+  }
+
+  .nav__right.nav__mobile--open {
     display: flex;
   }
 
@@ -1830,12 +1859,40 @@ a.problem-card__source:hover {
     font-size: 1.5rem;
   }
 
+  .nav__icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
   .nav__toggle {
     display: flex;
   }
 
-  .hero__title {
-    font-size: clamp(3rem, 12vw, 5rem);
+  .hero__infobar {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-md);
+  }
+
+  .hero__infobar-center {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .hero__infobar-right {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__infobar-right .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__badge {
+    bottom: auto;
+    top: calc(var(--nav-height) + var(--space-md));
+    right: var(--space-md);
   }
 
   .stats {
@@ -1893,19 +1950,6 @@ a.problem-card__source:hover {
 }
 
 @media (max-width: 480px) {
-  .hero__meta {
-    flex-direction: column;
-  }
-
-  .hero__actions {
-    flex-direction: column;
-  }
-
-  .hero__actions .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
   .donation-amounts {
     grid-template-columns: 1fr 1fr;
   }
