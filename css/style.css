@@ -497,6 +497,20 @@ button {
 }
 
 /* --- DECORATIVE PARTICLES --- */
+.deco-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.deco-layer .deco {
+  position: absolute;
+  opacity: 0.18;
+  color: var(--grape);
+}
+
 .deco-particles {
   position: relative;
   overflow: hidden;
@@ -566,7 +580,8 @@ button {
 }
 
 @media (max-width: 768px) {
-  .deco { display: none; }
+  .deco-layer { display: none; }
+  .deco-particles .deco { display: none; }
   .deco-particles .deco:nth-child(-n+3) { display: block; }
 }
 
