@@ -334,14 +334,10 @@ button {
 
 /* "by Open Project e.V." badge */
 .hero__badge {
-  position: absolute;
-  bottom: 100px;
-  right: var(--space-md);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  z-index: 2;
+  gap: 2px;
 }
 
 .hero__badge-by {
@@ -386,7 +382,8 @@ button {
 
 .hero__infobar-right {
   display: flex;
-  gap: var(--space-sm);
+  align-items: center;
+  gap: var(--space-md);
 }
 
 /* --- BUTTONS --- */
@@ -497,6 +494,74 @@ button {
 
 .section--fuchsia {
   background: var(--fuchsia);
+}
+
+/* --- DECORATIVE PARTICLES --- */
+.deco-particles {
+  position: relative;
+}
+
+.deco-particles .deco {
+  position: absolute;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--grape);
+}
+
+.deco--star {
+  width: 24px;
+  height: 24px;
+}
+
+.deco--diamond {
+  width: 18px;
+  height: 18px;
+}
+
+.deco--heart {
+  width: 20px;
+  height: 20px;
+}
+
+.deco--dot {
+  width: 10px;
+  height: 10px;
+  background: var(--grape);
+  border-radius: 50%;
+  opacity: 0.12;
+}
+
+.deco--float {
+  animation: decoFloat 8s ease-in-out infinite;
+}
+
+.deco--drift {
+  animation: decoDrift 10s ease-in-out infinite;
+}
+
+.deco--spin {
+  animation: decoSpin 12s linear infinite;
+}
+
+@keyframes decoFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+@keyframes decoDrift {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(10px) rotate(-5deg); }
+}
+
+@keyframes decoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .deco { display: none; }
+  .deco-particles .deco:nth-child(-n+3) { display: block; }
 }
 
 .section__header {
@@ -2551,9 +2616,7 @@ html {
   }
 
   .hero__badge {
-    bottom: auto;
-    top: calc(var(--nav-height) + var(--space-md));
-    right: var(--space-md);
+    order: -1;
   }
 
   .stats {
