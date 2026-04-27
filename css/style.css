@@ -499,6 +499,7 @@ button {
 /* --- DECORATIVE PARTICLES --- */
 .deco-particles {
   position: relative;
+  overflow: hidden;
 }
 
 .deco-particles .deco {
@@ -507,6 +508,11 @@ button {
   pointer-events: none;
   z-index: 0;
   color: var(--grape);
+}
+
+.deco-particles svg.deco {
+  width: var(--deco-size, 24px);
+  height: var(--deco-size, 24px);
 }
 
 .deco--star {
