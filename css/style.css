@@ -1987,92 +1987,131 @@ a.problem-card__source:hover {
   padding-bottom: var(--space-xl);
 }
 
-.donation-module {
+/* Donate Cards */
+.donate-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-lg);
   align-items: start;
 }
 
-.donation-form {
+.donate-card {
   background: rgba(255, 255, 255, 0.45);
   border: 1px solid rgba(86, 2, 80, 0.15);
+  border-radius: 16px;
   padding: var(--space-xl);
+  transition: all var(--duration-base) var(--ease-out);
 }
 
-.donation-form__title {
+.donate-card:hover {
+  border-color: rgba(86, 2, 80, 0.25);
+  box-shadow: 0 4px 20px rgba(86, 2, 80, 0.08);
+}
+
+.donate-card--primary {
+  border-color: var(--grape);
+  border-width: 2px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.donate-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.donate-card__icon {
+  flex-shrink: 0;
+  color: var(--grape);
+}
+
+.donate-card__title {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   text-transform: uppercase;
-  margin-bottom: var(--space-md);
+  color: var(--grape);
+  line-height: 1.1;
 }
 
-.donation-amounts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
+.donate-card__subtitle {
+  font-size: 0.8125rem;
+  color: var(--grey-text);
+  margin-top: 0.125rem;
 }
 
-.donation-amount {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  text-align: center;
-  padding: var(--space-sm);
-  border: 2px solid rgba(86, 2, 80, 0.2);
-  border-radius: 2px;
-  transition: all var(--duration-fast) var(--ease-out);
-}
-
-.donation-amount:hover {
-  border-color: var(--ruby);
-  color: var(--ruby);
-}
-
-.donation-amount--active {
-  background: var(--ruby);
-  border-color: var(--ruby);
-  color: var(--white);
-}
-
-.donation-custom {
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  padding: 0.875rem 1rem;
-  border: 2px solid rgba(86, 2, 80, 0.2);
-  border-radius: 2px;
-  margin-bottom: var(--space-md);
-  transition: border-color var(--duration-fast) var(--ease-out);
-  outline: none;
-}
-
-.donation-custom:focus {
-  border-color: var(--ruby);
-}
-
-.donation-bank {
-  margin-top: var(--space-md);
-  padding: var(--space-md);
-  background: rgba(86, 2, 80, 0.06);
-  border: 2px solid rgba(86, 2, 80, 0.15);
-  border-radius: 2px;
-  animation: fadeSlideIn 0.4s var(--ease-out);
-}
-
-@keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.donation-bank__details p {
+.donate-card__desc {
   font-size: 0.9375rem;
   line-height: 1.6;
+  color: var(--grey-text);
+  margin-bottom: var(--space-lg);
+}
+
+.donate-card__bank {
+  background: rgba(86, 2, 80, 0.05);
+  border-radius: 12px;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.donate-card__bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.donate-card__bank-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--grey-text);
+  flex-shrink: 0;
+}
+
+.donate-card__bank-value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--grape);
+  text-align: right;
+}
+
+.donate-card__bank-value--mono {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+}
+
+.donate-card__note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(86, 2, 80, 0.04);
+  border-left: 3px solid var(--grape);
+  border-radius: 0 8px 8px 0;
+}
+
+.donate-card__note svg {
+  flex-shrink: 0;
+  color: var(--grape);
+  margin-top: 0.125rem;
+}
+
+.donate-card__note p {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--grey-text);
   margin: 0;
 }
 
-.donation-bank__details p + p {
-  margin-top: 0.25rem;
+/* Donate Progress */
+.donate-progress {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Progress Bar */
@@ -2187,8 +2226,15 @@ a.problem-card__source:hover {
 }
 
 .usage-card__icon {
-  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
   margin-bottom: var(--space-sm);
+  color: var(--ruby);
+}
+
+.usage-card__icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .usage-card__title {
@@ -2399,6 +2445,10 @@ html {
   }
 
   .donation-module {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-cards {
     grid-template-columns: 1fr;
   }
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spenden — Fest der Demokratie 2026</title>
   <meta name="description" content="Unterstütze das Fest der Demokratie mit einer Spende. Jeder Beitrag macht Demokratie erlebbar.">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=3">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
@@ -42,103 +42,137 @@
   <!-- DONATION MODULE -->
   <section class="section" style="padding-top:0;">
     <div class="container">
-      <div class="donation-module fade-in">
-        <!-- FORM -->
-        <div class="donation-form">
-          <h2 class="donation-form__title">Betrag wählen</h2>
+      <div class="donate-cards fade-in">
 
-          <div class="donation-amounts" id="donationAmounts">
-            <button class="donation-amount" data-amount="10">10 €</button>
-            <button class="donation-amount" data-amount="25">25 €</button>
-            <button class="donation-amount donation-amount--active" data-amount="50">50 €</button>
-            <button class="donation-amount" data-amount="100">100 €</button>
-          </div>
-
-          <input type="number" class="donation-custom" placeholder="Eigener Betrag in €" id="customAmount">
-
-          <button class="btn btn--primary" style="width:100%; justify-content:center; margin-top:var(--space-sm);" id="donateBtn">
-            Jetzt 50 € spenden
-            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-
-          <!-- Kontoverbindung (hidden, shown on click) -->
-          <div class="donation-bank" id="donationBank" style="display:none;">
-            <h3 style="font-family:var(--font-display); font-size:1rem; text-transform:uppercase; margin-bottom:var(--space-xs);">Kontoverbindung</h3>
-            <div class="donation-bank__details">
-              <p><strong>Open Project e.V.</strong></p>
-              <p>IBAN: DE91 7215 1650 0009 5415 09</p>
-              <p>Verwendungszweck: <strong>Fest der Demokratie</strong></p>
+        <!-- BANK TRANSFER (Primary) -->
+        <div class="donate-card donate-card--primary">
+          <div class="donate-card__header">
+            <svg class="donate-card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <div>
+              <h2 class="donate-card__title">Jetzt spenden</h2>
+              <p class="donate-card__subtitle">Direkt aufs Vereinskonto</p>
             </div>
           </div>
 
-          <p style="font-size:0.8125rem; color:var(--grey-text); margin-top:var(--space-sm); text-align:center;">
-            Open Project e.V. ist als gemeinnützig anerkannt. Deine Spende ist steuerlich absetzbar.
+          <p class="donate-card__desc">Der effektivste Weg, unsere Arbeit langfristig abzusichern. Hier kommt jeder Cent ohne Abzüge direkt bei unseren Projekten an.</p>
+
+          <div class="donate-card__bank">
+            <div class="donate-card__bank-row">
+              <span class="donate-card__bank-label">Kontoinhaber</span>
+              <span class="donate-card__bank-value">Open Project e.V.</span>
+            </div>
+            <div class="donate-card__bank-row">
+              <span class="donate-card__bank-label">IBAN</span>
+              <span class="donate-card__bank-value donate-card__bank-value--mono">DE91 7215 1650 0009 5415 09</span>
+            </div>
+            <div class="donate-card__bank-row">
+              <span class="donate-card__bank-label">BIC</span>
+              <span class="donate-card__bank-value donate-card__bank-value--mono">BYLADEM1PAF</span>
+            </div>
+            <div class="donate-card__bank-row">
+              <span class="donate-card__bank-label">Geldinstitut</span>
+              <span class="donate-card__bank-value">Sparkasse Pfaffenhofen</span>
+            </div>
+          </div>
+
+          <div class="donate-card__note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <p>Wenn ihr eine Spendenbescheinigung benötigt, vergesst bitte nicht <strong>Name und Adresse</strong> im Verwendungszweck anzugeben.</p>
+          </div>
+        </div>
+
+        <!-- PAYPAL (Secondary) -->
+        <div class="donate-card">
+          <div class="donate-card__header">
+            <svg class="donate-card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l5-5 5 5"/><path d="M12 6v12"/><circle cx="12" cy="12" r="10"/></svg>
+            <div>
+              <h2 class="donate-card__title">Sofort unterstützen</h2>
+              <p class="donate-card__subtitle">Schnell und einfach per PayPal</p>
+            </div>
+          </div>
+
+          <p class="donate-card__desc">Schnell und unkompliziert mit deinem PayPal-Konto spenden. Ideal für spontane Unterstützung.</p>
+
+          <a href="https://www.paypal.com/qrcodes/managed/59c939dd-09d8-48c5-8409-4c7411baad73?utm_source=consapp_download" target="_blank" rel="noopener" class="btn btn--primary" style="width:100%; justify-content:center; margin-top: var(--space-md);">
+            Mit PayPal spenden
+            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+
+          <p style="font-size:0.75rem; color:var(--grey-text); margin-top:var(--space-sm); text-align:center;">
+            Du wirst zu PayPal weitergeleitet.
           </p>
         </div>
 
-        <!-- PROGRESS -->
-        <div class="progress-module">
-          <h2 class="progress-module__title">Unser Spendenziel</h2>
+      </div>
+    </div>
+  </section>
 
-          <div class="progress-bar">
-            <div class="progress-bar__header">
-              <span class="progress-bar__label">Gesamtbudget</span>
-              <span class="progress-bar__value">4.630 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.875rem;">/ 10.000 €</span></span>
-            </div>
-            <div class="progress-bar__track">
-              <div class="progress-bar__fill progress-bar__fill--ruby" style="width: 0%;" data-width="46"></div>
-            </div>
+  <!-- PROGRESS -->
+  <section class="section section--grey">
+    <div class="container">
+      <div class="section__header fade-in">
+        <p class="section__overline">Transparenz</p>
+        <h2 class="section__title">Unser<br>Spendenziel</h2>
+      </div>
+      <div class="donate-progress fade-in">
+        <div class="progress-bar">
+          <div class="progress-bar__header">
+            <span class="progress-bar__label">Gesamtbudget</span>
+            <span class="progress-bar__value">7.730 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.875rem;">/ 10.000 €</span></span>
           </div>
-
-          <div class="progress-bar">
-            <div class="progress-bar__header">
-              <span class="progress-bar__label">Technik & Infrastruktur</span>
-              <span class="progress-bar__value" style="font-size:1rem;">610 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 1.500 €</span></span>
-            </div>
-            <div class="progress-bar__track">
-              <div class="progress-bar__fill progress-bar__fill--grape" style="width: 0%;" data-width="41"></div>
-            </div>
+          <div class="progress-bar__track">
+            <div class="progress-bar__fill progress-bar__fill--ruby" style="width: 0%;" data-width="77"></div>
           </div>
+        </div>
 
-          <div class="progress-bar">
-            <div class="progress-bar__header">
-              <span class="progress-bar__label">Honorare & Gagen</span>
-              <span class="progress-bar__value" style="font-size:1rem;">2.020 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 5.500 €</span></span>
-            </div>
-            <div class="progress-bar__track">
-              <div class="progress-bar__fill progress-bar__fill--sky" style="width: 0%;" data-width="37"></div>
-            </div>
+        <div class="progress-bar">
+          <div class="progress-bar__header">
+            <span class="progress-bar__label">Technik & Infrastruktur</span>
+            <span class="progress-bar__value" style="font-size:1rem;">1.250 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 1.500 €</span></span>
           </div>
-
-          <div class="progress-bar">
-            <div class="progress-bar__header">
-              <span class="progress-bar__label">Programm & Öffentlichkeitsarbeit</span>
-              <span class="progress-bar__value" style="font-size:1rem;">1.540 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 2.000 €</span></span>
-            </div>
-            <div class="progress-bar__track">
-              <div class="progress-bar__fill progress-bar__fill--ruby" style="width: 0%;" data-width="77"></div>
-            </div>
+          <div class="progress-bar__track">
+            <div class="progress-bar__fill progress-bar__fill--grape" style="width: 0%;" data-width="83"></div>
           </div>
+        </div>
 
-          <div class="progress-bar">
-            <div class="progress-bar__header">
-              <span class="progress-bar__label">Versicherung & Genehmigungen</span>
-              <span class="progress-bar__value" style="font-size:1rem;">460 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 1.000 €</span></span>
-            </div>
-            <div class="progress-bar__track">
-              <div class="progress-bar__fill progress-bar__fill--grape" style="width: 0%;" data-width="46"></div>
-            </div>
+        <div class="progress-bar">
+          <div class="progress-bar__header">
+            <span class="progress-bar__label">Honorare & Gagen</span>
+            <span class="progress-bar__value" style="font-size:1rem;">3.800 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 5.500 €</span></span>
           </div>
+          <div class="progress-bar__track">
+            <div class="progress-bar__fill progress-bar__fill--sky" style="width: 0%;" data-width="69"></div>
+          </div>
+        </div>
 
-          <div class="progress-stats">
-            <div class="progress-stat">
-              <div class="progress-stat__number">4.630 €</div>
-              <div class="progress-stat__label">Gesammelt</div>
-            </div>
-            <div class="progress-stat">
-              <div class="progress-stat__number">46%</div>
-              <div class="progress-stat__label">Erreicht</div>
-            </div>
+        <div class="progress-bar">
+          <div class="progress-bar__header">
+            <span class="progress-bar__label">Programm & Öffentlichkeitsarbeit</span>
+            <span class="progress-bar__value" style="font-size:1rem;">1.880 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 2.000 €</span></span>
+          </div>
+          <div class="progress-bar__track">
+            <div class="progress-bar__fill progress-bar__fill--ruby" style="width: 0%;" data-width="94"></div>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-bar__header">
+            <span class="progress-bar__label">Versicherung & Genehmigungen</span>
+            <span class="progress-bar__value" style="font-size:1rem;">800 € <span style="color:var(--grey-text); font-family:var(--font-body); font-size:0.8125rem;">/ 1.000 €</span></span>
+          </div>
+          <div class="progress-bar__track">
+            <div class="progress-bar__fill progress-bar__fill--grape" style="width: 0%;" data-width="80"></div>
+          </div>
+        </div>
+
+        <div class="progress-stats">
+          <div class="progress-stat">
+            <div class="progress-stat__number">7.730 €</div>
+            <div class="progress-stat__label">Gesammelt</div>
+          </div>
+          <div class="progress-stat">
+            <div class="progress-stat__number">77%</div>
+            <div class="progress-stat__label">Erreicht</div>
           </div>
         </div>
       </div>
@@ -146,26 +180,32 @@
   </section>
 
   <!-- WHAT YOUR DONATION DOES -->
-  <section class="section section--grey">
+  <section class="section">
     <div class="container">
       <div class="section__header fade-in">
-        <p class="section__overline">Transparenz</p>
+        <p class="section__overline">Wirkung</p>
         <h2 class="section__title">Dein Beitrag<br>könnte bewirken</h2>
         <p class="section__subtitle">Jeder Euro fließt direkt in das Festival. Hier ein Einblick, was deine Spende möglich machen könnte.</p>
       </div>
       <div class="usage-grid fade-in">
         <div class="usage-card">
-          <div class="usage-card__icon">🎨</div>
+          <div class="usage-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
           <h3 class="usage-card__title">10 € Spende</h3>
           <p class="usage-card__text">Könnte ein Siebdruck-Kit oder kreatives Material für einen Workshop-Teilnehmenden finanzieren.</p>
         </div>
         <div class="usage-card">
-          <div class="usage-card__icon">🛠</div>
+          <div class="usage-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
           <h3 class="usage-card__title">50 € Spende</h3>
           <p class="usage-card__text">Könnte tolle Workshopmaterialien für praxisnahe Demokratiebildung ermöglichen.</p>
         </div>
         <div class="usage-card">
-          <div class="usage-card__icon">🔊</div>
+          <div class="usage-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </div>
           <h3 class="usage-card__title">100 € Spende</h3>
           <p class="usage-card__text">Könnte atemberaubenden Sound und professionelle Bühnentechnik ermöglichen.</p>
         </div>
@@ -174,7 +214,7 @@
   </section>
 
   <!-- ALTERNATIVE SUPPORT -->
-  <section class="section">
+  <section class="section section--grey">
     <div class="container">
       <div class="section__header fade-in">
         <p class="section__overline">Weitere Möglichkeiten</p>
@@ -183,21 +223,27 @@
       <div class="highlights fade-in">
         <div class="highlight-card">
           <div class="highlight-card__accent" style="background:var(--sky);"></div>
-          <div class="highlight-card__number">🙋</div>
+          <div class="highlight-card__number" style="font-size:2rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
           <h3 class="highlight-card__title">Ehrenamt</h3>
           <p class="highlight-card__text">Werde Teil des Teams! Wir suchen Helfer:innen für Auf- und Abbau, Awareness und Moderation.</p>
           <a href="https://chat.whatsapp.com/FLcmhTfTNuW39nSqphEpoc?mode=gi_t" target="_blank" rel="noopener" class="btn btn--small" style="margin-top:var(--space-sm);">WhatsApp-Gruppe beitreten</a>
         </div>
         <div class="highlight-card">
           <div class="highlight-card__accent" style="background:var(--sunshine);"></div>
-          <div class="highlight-card__number">📣</div>
+          <div class="highlight-card__number" style="font-size:2rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          </div>
           <h3 class="highlight-card__title">Teile das Event</h3>
           <p class="highlight-card__text">Teile das Festival in deinen Netzwerken. Je mehr Menschen davon erfahren, desto besser.</p>
           <a href="assets/sharepic-instagram.png" download="Fest-der-Demokratie-Sharepic.png" class="btn btn--small" style="margin-top:var(--space-sm);">Sharepic herunterladen</a>
         </div>
         <div class="highlight-card">
           <div class="highlight-card__accent" style="background:var(--fuchsia);"></div>
-          <div class="highlight-card__number">🎤</div>
+          <div class="highlight-card__number" style="font-size:2rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
           <h3 class="highlight-card__title">Mitmachen</h3>
           <p class="highlight-card__text">Wir suchen noch Künstler:innen und Vereine, die das Programm mitgestalten. Meld dich bei uns!</p>
           <a href="mailto:fest.der.demokratie.paf@gmail.com" class="btn btn--small" style="margin-top:var(--space-sm);">Kontakt aufnehmen</a>
@@ -216,7 +262,7 @@
           <p class="cta-banner__text">Unser Team hilft dir gerne weiter — transparent und persönlich.</p>
         </div>
         <div class="cta-banner__action">
-          <a href="mailto:spenden@fest-der-demokratie.de" class="btn btn--secondary" style="border-color:var(--white); color:var(--white);">Kontakt aufnehmen</a>
+          <a href="mailto:fest.der.demokratie.paf@gmail.com" class="btn btn--secondary" style="border-color:var(--white); color:var(--white);">Kontakt aufnehmen</a>
         </div>
       </div>
     </div>
