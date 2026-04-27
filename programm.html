@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programm — Fest der Demokratie 2026</title>
-  <meta name="description" content="Das vollständige Programm: Bands, Panels, Workshops und mehr. 4. Juli 2026 im Bürgerpark Pfaffenhofen.">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Line-Up — Fest der Demokratie 2026</title>
+  <meta name="description" content="Das vollständige Line-Up: George JR, PLUME, bucci, Juli Gilde, Fliegende Haie und mehr. 4. Juli 2026 im Bürgerpark Pfaffenhofen.">
+  <link rel="stylesheet" href="css/style.css?v=2">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
@@ -30,190 +30,99 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="programm-hero">
+  <!-- LINEUP PAGE -->
+  <section class="lineup-page">
     <div class="container">
-      <p class="section__overline fade-in">Sa, 4. Juli 2026 · Bürgerpark Pfaffenhofen · Einlass ab 15 Uhr</p>
-      <h1 class="section__title fade-in" style="font-size:clamp(3rem, 7vw, 6rem);">Programm</h1>
-      <p class="section__subtitle fade-in">Musik und politische Bildung — gleichberechtigt auf der Bühne im Bürgerpark. Von 15 bis 23:15 Uhr erwartet dich ein abwechslungsreiches Programm mit Live-Konzerten, Workshops und Podiumsdiskussion.</p>
-    </div>
-  </section>
-
-  <!-- FILTERS + SCHEDULE -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="programm-filters fade-in" id="filters">
-        <button class="filter-btn filter-btn--active" data-filter="alle">Alle</button>
-        <button class="filter-btn" data-filter="musik">🎵 Musik</button>
-        <button class="filter-btn" data-filter="programm">🎤 Programm & Mitmachen</button>
+      <div class="lineup-tabs">
+        <button class="lineup-tab lineup-tab--active" data-tab="musik">Musik</button>
+        <button class="lineup-tab" data-tab="erleben">Erleben</button>
       </div>
-
-      <!-- SINGLE DAY SCHEDULE -->
-      <div class="schedule fade-in" id="schedule">
-
-        <div class="schedule-item" data-day="1" data-category="programm">
-          <div class="schedule-item__time">15:00</div>
-          <div class="schedule-item__icon schedule-item__icon--programm">🧩</div>
-          <div>
-            <div class="schedule-item__name">Interaktive Stände & Stationen</div>
-            <div class="schedule-item__detail">Festivalgelände · Ganztägig: Lokale Jugendorganisationen und Vereine präsentieren interaktive Stationen — darunter z. B. der Demokratie-Check „Was würde sich in einer Diktatur ändern?"</div>
+      <div class="lineup-content lineup-content--active" id="tab-musik">
+        <div class="artist-grid">
+          <div class="artist-tile" data-artist="george-jr">
+            <div class="artist-tile__img" style="background-image: url('assets/lineup/george-jr-tile.jpg');"></div>
+            <div class="artist-tile__overlay"></div>
+            <span class="artist-tile__badge">Headliner</span>
+            <div class="artist-tile__bottom">
+              <span class="artist-tile__time">22:05</span>
+              <span class="artist-tile__name">George JR</span>
+              <svg class="artist-tile__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            <span class="artist-tile__credit">Foto: KYD</span>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">15:00</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">DJ-Set: Milan Milano</div>
-            <div class="schedule-item__detail">Bühne · Musikalische Einstimmung auf das Fest der Demokratie — bis 16:00 Uhr</div>
+          <div class="artist-tile" data-artist="plume">
+            <div class="artist-tile__img" style="background-image: url('assets/lineup/plume-tile.jpg');"></div>
+            <div class="artist-tile__overlay"></div>
+            <div class="artist-tile__bottom">
+              <span class="artist-tile__time">20:50</span>
+              <span class="artist-tile__name">PLUME</span>
+              <svg class="artist-tile__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            <span class="artist-tile__credit">Foto: Jessy Romero Walter</span>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="programm">
-          <div class="schedule-item__time">16:00</div>
-          <div class="schedule-item__icon schedule-item__icon--programm">🎤</div>
-          <div>
-            <div class="schedule-item__name">Eröffnung & Begrüßung</div>
-            <div class="schedule-item__detail">Bühne · Offizielle Eröffnung mit Grußwort der Petra-Kelly-Stiftung</div>
+          <div class="artist-tile" data-artist="bucci">
+            <div class="artist-tile__img" style="background: linear-gradient(135deg, #2e1a0a 0%, #c44a00 40%, #ffd699 100%);"></div>
+            <div class="artist-tile__overlay"></div>
+            <div class="artist-tile__bottom">
+              <span class="artist-tile__time">19:15</span>
+              <span class="artist-tile__name">bucci</span>
+              <svg class="artist-tile__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="programm">
-          <div class="schedule-item__time">16:10</div>
-          <div class="schedule-item__icon schedule-item__icon--programm">🛠</div>
-          <div>
-            <div class="schedule-item__name">Workshops: Respekt-Café & Lego Serious Play</div>
-            <div class="schedule-item__detail">Workshop-Zelte · In Kooperation mit der vhs Pfaffenhofen — bis 17:05 Uhr</div>
+          <div class="artist-tile" data-artist="juli-gilde">
+            <div class="artist-tile__img" style="background-image: url('assets/lineup/juli-gilde-tile.jpg');"></div>
+            <div class="artist-tile__overlay"></div>
+            <div class="artist-tile__bottom">
+              <span class="artist-tile__time">18:05</span>
+              <span class="artist-tile__name">Juli Gilde</span>
+              <svg class="artist-tile__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            <span class="artist-tile__credit">Foto: Sandra Ludewig</span>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">16:15</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Live-Konzert: Fliegende Haie</div>
-            <div class="schedule-item__detail">Bühne · Live-Musik — bis 16:55 Uhr</div>
+          <div class="artist-tile" data-artist="fliegende-haie">
+            <div class="artist-tile__img" style="background-image: url('assets/lineup/fliegende-haie-tile.jpg');"></div>
+            <div class="artist-tile__overlay"></div>
+            <div class="artist-tile__bottom">
+              <span class="artist-tile__time">16:15</span>
+              <span class="artist-tile__name">Fliegende Haie</span>
+              <svg class="artist-tile__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="programm">
-          <div class="schedule-item__time">17:15</div>
-          <div class="schedule-item__icon schedule-item__icon--programm">🎤</div>
-          <div>
-            <div class="schedule-item__name">Podiumsdiskussion</div>
-            <div class="schedule-item__detail">Bühne · Junge Stimmen zur Zukunft der Demokratie — mit Vertreter:innen von Jugendorganisationen und jungen Politiker:innen — bis 17:45 Uhr</div>
+          <div class="artist-tile" data-artist="milan-milano">
+            <div class="artist-tile__img" style="background-image: url('assets/lineup/milan-milano-tile.jpg');"></div>
+            <div class="artist-tile__overlay"></div>
+            <span class="artist-tile__badge artist-tile__badge--dj">DJ-Set</span>
+            <div class="artist-tile__bottom">
+              <span class="artist-tile__time">15:00</span>
+              <span class="artist-tile__name">Milan Milano</span>
+              <svg class="artist-tile__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
           </div>
-          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
         </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">18:05</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Live-Konzert: Juli Gilde</div>
-            <div class="schedule-item__detail">Bühne · Live-Musik — bis 18:50 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">19:15</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Live-Konzert: bucci</div>
-            <div class="schedule-item__detail">Bühne · Live-Musik — bis 20:05 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">20:50</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Live-Konzert: PLUME</div>
-            <div class="schedule-item__detail">Bühne · Live-Musik — bis 21:45 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">22:05</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Live-Konzert: George JR</div>
-            <div class="schedule-item__detail">Bühne · Headliner des Abends — bis 23:05 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="programm">
-          <div class="schedule-item__time">23:05</div>
-          <div class="schedule-item__icon schedule-item__icon--programm">🎤</div>
-          <div>
-            <div class="schedule-item__name">Abmoderation</div>
-            <div class="schedule-item__detail">Bühne · Rückblick auf den Tag und Dank an alle Beteiligten</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--programm">Programm</span>
-        </div>
-
-        <div class="schedule-item" data-day="1" data-category="musik">
-          <div class="schedule-item__time">23:15</div>
-          <div class="schedule-item__icon schedule-item__icon--musik">🎵</div>
-          <div>
-            <div class="schedule-item__name">Ausklang</div>
-            <div class="schedule-item__detail">Bühne · Entspannter musikalischer Abschluss des Fests der Demokratie — bis 23:45 Uhr</div>
-          </div>
-          <span class="schedule-item__tag schedule-item__tag--musik">Musik</span>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- AREAS -->
-  <section class="section section--grey">
-    <div class="container">
-      <div class="section__header fade-in">
-        <p class="section__overline">Bereiche</p>
-        <h2 class="section__title">Das erwartet dich<br>im Bürgerpark</h2>
-      </div>
-      <div class="highlights fade-in">
-        <div class="highlight-card" style="border-top: 4px solid var(--ruby);">
-          <div class="highlight-card__number" style="color: var(--ruby);">🎸</div>
-          <h3 class="highlight-card__title">Bühne</h3>
-          <p class="highlight-card__text">Regionale Bands, Headliner, Podiumsdiskussionen und Interviews — das Herzstück des Festivals.</p>
-        </div>
-        <div class="highlight-card" style="border-top: 4px solid var(--sky);">
-          <div class="highlight-card__number" style="color: var(--sky);">🛠</div>
-          <h3 class="highlight-card__title">Workshop-Zelt</h3>
-          <p class="highlight-card__text">Interaktive Workshops zu Argumentationstechniken, Social Media und Medienkompetenz.</p>
-        </div>
-        <div class="highlight-card" style="border-top: 4px solid var(--sunshine);">
-          <div class="highlight-card__number" style="color: var(--sunshine);">🧩</div>
-          <h3 class="highlight-card__title">Festivalgelände</h3>
-          <p class="highlight-card__text">Infostände lokaler Vereine und Initiativen, der Demokratie-Check, Familienprogramm und Feedback-Stand.</p>
+      <div class="lineup-content" id="tab-erleben">
+        <div class="erleben-grid">
+          <div class="erleben-card"><div class="erleben-card__accent" style="background: var(--ruby);"></div><span class="erleben-card__time">16:00</span><h3 class="erleben-card__title">Eröffnung & Begrüßung</h3><p class="erleben-card__desc">Offizielle Eröffnung des Fests der Demokratie mit Grußwort der Petra-Kelly-Stiftung auf der Hauptbühne.</p><span class="erleben-card__tag">Bühne</span></div>
+          <div class="erleben-card"><div class="erleben-card__accent" style="background: var(--sky);"></div><span class="erleben-card__time">16:10 — 17:05</span><h3 class="erleben-card__title">Workshops: Respekt-Café & Lego Serious Play</h3><p class="erleben-card__desc">Kontroverser Dialog im Respekt-Café und spielerische Zukunftsgestaltung mit Lego — in Kooperation mit der vhs Pfaffenhofen.</p><span class="erleben-card__tag">Workshop-Zelt</span></div>
+          <div class="erleben-card"><div class="erleben-card__accent" style="background: var(--grape);"></div><span class="erleben-card__time">17:15 — 17:45</span><h3 class="erleben-card__title">Podiumsdiskussion</h3><p class="erleben-card__desc">Junge Stimmen zur Zukunft der Demokratie — mit Vertreter:innen von Jugendorganisationen und jungen Politiker:innen, live auf der Bühne.</p><span class="erleben-card__tag">Bühne</span></div>
+          <div class="erleben-card"><div class="erleben-card__accent" style="background: var(--sunshine);"></div><span class="erleben-card__time">15:00 — 23:00</span><h3 class="erleben-card__title">Interaktive Infostände</h3><p class="erleben-card__desc">Lokale Jugendorganisationen, politische Vereine und Initiativen wie das Jugendparlament, Queer e.V. und „Pfaffenhofen ist bunt" stellen sich vor.</p><span class="erleben-card__tag">Festivalgelände</span></div>
+          <div class="erleben-card"><div class="erleben-card__accent" style="background: var(--fuchsia);"></div><span class="erleben-card__time">15:00 — 23:00</span><h3 class="erleben-card__title">Demokratie-Check</h3><p class="erleben-card__desc">„Was würde sich in einer Diktatur ändern?" — Die interaktive Station, die zum Nachdenken anregt und Demokratie erlebbar macht.</p><span class="erleben-card__tag">Festivalgelände</span></div>
+          <div class="erleben-card"><div class="erleben-card__accent" style="background: var(--ruby);"></div><span class="erleben-card__time">23:05</span><h3 class="erleben-card__title">Abmoderation</h3><p class="erleben-card__desc">Rückblick auf den Tag und Dank an alle Beteiligten — der gemeinsame Abschluss des Fests der Demokratie.</p><span class="erleben-card__tag">Bühne</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PARALLEL PROGRAM NOTE -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-banner fade-in" style="background: var(--sky);">
-        <div class="cta-banner__shape" style="background: var(--grape);"></div>
-        <div class="cta-banner__content">
-          <h2 class="cta-banner__title" style="color: var(--black);">Ganztägig: Infostände, Workshops & Demokratie-Check</h2>
-          <p class="cta-banner__text" style="color: rgba(0,0,0,0.65);">Von 15 bis 23 Uhr präsentieren lokale Jugendorganisationen, politische Vereine und Initiativen wie das Jugendparlament, der Kreisjugendring, Queer e.V. und „Pfaffenhofen ist bunt" ihre Arbeit. Die vhs Pfaffenhofen bietet das Respekt-Café und Lego Serious Play an. Komm vorbei und finde heraus, wo du dich einbringen kannst!</p>
-        </div>
-      </div>
+  <!-- ARTIST DETAIL MODAL -->
+  <div class="artist-modal" id="artistModal">
+    <div class="artist-modal__backdrop"></div>
+    <div class="artist-modal__content">
+      <button class="artist-modal__close" aria-label="Schließen"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="artist-modal__header"><h2 class="artist-modal__name" id="modalName"></h2><span class="artist-modal__time" id="modalTime"></span></div>
+      <p class="artist-modal__bio" id="modalBio"></p>
+      <div class="artist-modal__spotify" id="modalSpotify"></div>
     </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -221,7 +130,7 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand"><img src="assets/logos/logo-white-wide.png" alt="Fest der Demokratie" style="height:40px; width:auto;"></div>
-          <p class="footer__desc">Ein Projekt von <a href="https://op-paf.de" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Open Project e.V.</a>, in Kooperation mit der Petra-Kelly-Stiftung, gefördert durch die Stadt Pfaffenhofen und die Deutsche Stiftung für Engagement und Ehrenamt.</p>
+          <p class="footer__desc">Ein Projekt von <a href="https://op-paf.de" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Open Project e.V.</a>, in Kooperation mit der Petra-Kelly-Stiftung, gefördert durch die Stadt Pfaffenhofen, die Deutsche Stiftung für Engagement und Ehrenamt und den Verband für Popkultur in Bayern.</p>
         </div>
         <div>
           <h4 class="footer__heading">Navigation</h4>
@@ -239,9 +148,10 @@
         </div>
         <div>
           <h4 class="footer__heading">Partner & Förderer</h4>
+          <a href="https://www.pfaffenhofen.de" target="_blank" rel="noopener" class="footer__link">Stadt Pfaffenhofen</a>
           <a href="https://www.petrakellystiftung.de" target="_blank" rel="noopener" class="footer__link">Petra-Kelly-Stiftung</a>
           <a href="https://www.deutsche-stiftung-engagement-und-ehrenamt.de" target="_blank" rel="noopener" class="footer__link">Deutsche Stiftung für Engagement und Ehrenamt</a>
-          <a href="https://www.pfaffenhofen.de" target="_blank" rel="noopener" class="footer__link">Stadt Pfaffenhofen</a>
+          <a href="https://popkultur.bayern" target="_blank" rel="noopener" class="footer__link">Verband für Popkultur in Bayern</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -259,5 +169,8 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  (function(){const tabs=document.querySelectorAll('.lineup-tab'),contents=document.querySelectorAll('.lineup-content');tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('lineup-tab--active'));contents.forEach(x=>x.classList.remove('lineup-content--active'));t.classList.add('lineup-tab--active');document.getElementById('tab-'+t.dataset.tab).classList.add('lineup-content--active')}));const artists={'george-jr':{name:'George JR',time:'22:05 — 23:05 · Headliner',bio:'George JR ist ein deutscher Singer-Songwriter vom Niederrhein, der seit 2020 Musik auf seinem eigenen Label "Klix the Kid" veröffentlicht. Sein Sound bewegt sich zwischen progressivem Hip-Hop und Indie-Pop — emotional, atmosphärisch und auf Deutsch. Mit über 67.000 monatlichen Hörern auf Spotify und ausverkauften Shows in München, Berlin und Köln hat er sich als eine der spannendsten Stimmen der deutschen Indie-Szene etabliert.',spotify:'<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/35rLzOjaDt0k9L0JwndPYh?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'},'plume':{name:'PLUME',time:'20:50 — 21:45',bio:'PLUME sind eine Emo- und Post-Hardcore-Band aus München, die Pop-Sensibilität mit avantgardistischer Aggression und elektronischer Experimentierfreude verbinden. Als Teil des BY.on-Eliteförderungsprogramms und frisch beim Label Arising Empire unter Vertrag, gehören sie zu den aufregendsten neuen Acts der deutschen Alternative-Szene.',spotify:'<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4OaXP5RcjrbxyCBmVU5Jcv?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'},'bucci':{name:'bucci',time:'19:15 — 20:05',bio:'bucci ist ein deutscher Musiker, der Pop-Rock-Elemente mit introspektiven, oft humorvollen deutschen Texten verbindet — „So wie Gucci, nur mit b". Mit über 2,4 Millionen Streams auf seinem Hit „rockstars" beweist er, dass authentische Texte und echte Geschichten ein großes Publikum erreichen.',spotify:'<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5nNn1ce9WJqAkFJbzOvlgB?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'},'juli-gilde':{name:'Juli Gilde',time:'18:05 — 18:50',bio:'Juli Gilde wurde 2002 in Berlin geboren und begann früh, ihre Gedanken in Songtexte zu verwandeln. Als Studentin der Popakademie Mannheim hat sie sich mit ihrem Debütalbum „it\'s hard to be a blizzard" und dem Hit „Rosarot" als eine der einfühlsamsten deutschsprachigen Singer-Songwriterinnen ihrer Generation etabliert.',spotify:'<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2uxmIz3X1WyHMQcJYAi6Gu?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'},'fliegende-haie':{name:'Fliegende Haie',time:'16:15 — 16:55',bio:'Fliegende Haie sind ein Elektro-Pop-Duo aus Augsburg und München, bestehend aus der ausgebildeten Pianistin Kristina Paulini und Produzent Jan König. Ihr Sound mischt scharfe deutsche Texte mit clubbigen Beats und glitzernden Synths.',spotify:'<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7C7bmexKMaULfBZS8VsoyJ?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'},'milan-milano':{name:'Milan Milano',time:'15:00 — 16:00 · DJ-Set',bio:'Milan Milano ist ein Techno-DJ und Produzent aus Nürnberg, dessen Familie aus Nepal stammt. Als Resident-DJ bei „ELEKTRISCH" und dem Die Rakete Club hat er sich in der Nürnberger Techno-Szene einen Namen gemacht.',spotify:'<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4qAHlyWBrfgaf88q3XWVMm?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'}};const modal=document.getElementById('artistModal'),mName=document.getElementById('modalName'),mTime=document.getElementById('modalTime'),mBio=document.getElementById('modalBio'),mSpotify=document.getElementById('modalSpotify');function openModal(id){const d=artists[id];if(!d)return;mName.textContent=d.name;mTime.textContent=d.time;mBio.textContent=d.bio;mSpotify.innerHTML=d.spotify;modal.classList.add('artist-modal--open');document.body.style.overflow='hidden'}function closeModal(){modal.classList.remove('artist-modal--open');document.body.style.overflow='';mSpotify.innerHTML=''}document.querySelectorAll('.artist-tile').forEach(t=>t.addEventListener('click',()=>openModal(t.dataset.artist)));modal.querySelector('.artist-modal__close').addEventListener('click',closeModal);modal.querySelector('.artist-modal__backdrop').addEventListener('click',closeModal);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})})();
+  </script>
 </body>
 </html>
