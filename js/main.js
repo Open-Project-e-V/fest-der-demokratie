@@ -44,6 +44,19 @@
     });
   }
 
+  // --- NAV LOGO: scroll to top when already on homepage ---
+  const navLogo = document.querySelector('.nav__logo');
+  if (navLogo) {
+    navLogo.addEventListener('click', (e) => {
+      const path = window.location.pathname;
+      const isHome = path === '/' || path === '/index.html' || path.endsWith('/index.html');
+      if (isHome) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
   // --- INTERSECTION OBSERVER (Scroll Animations) ---
   const animClasses = {
     'fade-in': 'fade-in--visible',
