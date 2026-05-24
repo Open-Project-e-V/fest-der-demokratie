@@ -85,6 +85,49 @@ img {
   display: block;
 }
 
+/* --- ACCESSIBILITY --- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--grape);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-md);
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--sunshine);
+}
+
+/* Focus styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--sunshine);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -500,6 +543,71 @@ button {
 .deco-particles {
   position: relative;
   overflow: hidden;
+}
+
+/* --- SPONSOR BOX --- */
+.sponsor-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-xl);
+  background: var(--white);
+  border-radius: 20px;
+  border: 2px solid var(--grape);
+  box-shadow: 0 12px 40px rgba(86, 2, 80, 0.08);
+}
+
+.sponsor-box__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--grape);
+  margin: var(--space-xs) 0 var(--space-sm);
+  line-height: 1;
+}
+
+.sponsor-box__text {
+  color: var(--grape);
+  opacity: 0.85;
+  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.sponsor-box__visual {
+  color: var(--ruby);
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .sponsor-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: var(--space-lg);
+  }
+  .sponsor-box__visual {
+    order: -1;
+    margin: 0 auto;
+  }
+  .sponsor-box__visual svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* --- INFO MAP --- */
+.info-map {
+  margin: var(--space-md) 0 var(--space-lg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(86, 2, 80, 0.08);
+}
+
+.info-map iframe {
+  display: block;
 }
 
 .deco-particles .deco {
