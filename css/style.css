@@ -2193,6 +2193,12 @@ a.problem-card__source:hover {
   align-items: start;
 }
 
+.donate-cards--single {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .donate-card {
   background: rgba(255, 255, 255, 0.45);
   border: 1px solid rgba(86, 2, 80, 0.15);
