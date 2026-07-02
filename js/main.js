@@ -30,6 +30,8 @@
       if (navLeft) navLeft.classList.toggle('nav__mobile--open');
       if (navRight) navRight.classList.toggle('nav__mobile--open');
       const isOpen = navLeft && navLeft.classList.contains('nav__mobile--open');
+      nav.classList.toggle('nav--menu-open', isOpen);
+      if (isOpen) nav.style.transform = '';
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
@@ -39,6 +41,7 @@
         navToggle.classList.remove('nav__toggle--open');
         if (navLeft) navLeft.classList.remove('nav__mobile--open');
         if (navRight) navRight.classList.remove('nav__mobile--open');
+        nav.classList.remove('nav--menu-open');
         document.body.style.overflow = '';
       });
     });
@@ -120,6 +123,7 @@
   let lastNavScrollY = 0;
   let navHidden = false;
   window.addEventListener('scroll', () => {
+    if (nav.classList.contains('nav--menu-open')) return;
     const scrollY = window.scrollY;
     if (scrollY > 300 && scrollY > lastNavScrollY && !navHidden) {
       nav.style.transform = 'translateY(-100%)';
