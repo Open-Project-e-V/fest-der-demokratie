@@ -182,6 +182,15 @@ button {
               box-shadow var(--duration-base) var(--ease-out);
 }
 
+/* While the mobile menu is open, the nav must not create a containing
+   block (transform/backdrop-filter would trap the fixed overlays) */
+.nav--menu-open {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: none !important;
+  transition: none;
+}
+
 .nav--scrolled {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
@@ -2700,16 +2709,27 @@ html {
   .nav__right {
     display: none;
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: var(--fuchsia);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: var(--space-lg);
     z-index: 999;
+  }
+
+  .nav__left {
+    top: 0;
+    bottom: 0;
+    background: var(--fuchsia);
+    justify-content: center;
+    padding-bottom: 25vh;
+  }
+
+  .nav__right {
+    top: auto;
+    bottom: 18vh;
+    background: transparent;
+    z-index: 1000;
   }
 
   .nav__left.nav__mobile--open {
