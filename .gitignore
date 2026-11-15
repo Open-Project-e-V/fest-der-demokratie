@@ -1,0 +1,122 @@
+# ---------------------------------------------------------------------------
+# IDEs / Editors
+# ---------------------------------------------------------------------------
+
+# JetBrains (IntelliJ, WebStorm, PhpStorm, ...) – ignore the whole folder
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+http-client.private.env.json
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# Vim / Neovim
+[._]*.s[a-v][a-z]
+!*.svg
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# Emacs
+\#*\#
+.\#*
+*.elc
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Fleet / Zed / Cursor
+.fleet/
+.zed/
+.cursor/
+
+# ---------------------------------------------------------------------------
+# Operating systems
+# ---------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon[\r]
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ---------------------------------------------------------------------------
+# Tooling / build artefacts
+# ---------------------------------------------------------------------------
+
+# Node (in case tooling gets added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.eslintcache
+.stylelintcache
+
+# Build output / caches
+dist/
+build/
+.cache/
+.parcel-cache/
+.sass-cache/
+
+# Logs & temp files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# ---------------------------------------------------------------------------
+# Secrets / local config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# Claude Code – keep shared config, ignore personal settings
+.claude/settings.local.json
